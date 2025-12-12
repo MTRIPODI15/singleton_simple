@@ -1,0 +1,33 @@
+name: Singleton API Test (SDET M1)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test_singleton_client:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 1. Checkout del Código
+      uses: actions/checkout@v4
+
+    - name: 2. Configurar Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip' # Usa cache para acelerar instalaciones
+        
+    - name: 3. Instalar Dependencias (requests y pytest)
+      run: pip install -r requirements.txt
+
+    - name: 4. Ejecutar Tests de API (Pytest)
+      run: pytest tests/api/test_users.py
+      
+    - name: 5. Documentar el Éxito del Singleton (Opcional)
+      # Este paso sólo es para demostrar el output en el log de la Action
+      run: |
+        echo "Validando Singleton en el log de la Action:"
+        # Captura el output de la consola para ver el mensaje "NUEVA instancia..."
+        # y la verificación del ID de sesión

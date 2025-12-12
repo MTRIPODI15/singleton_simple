@@ -1,0 +1,41 @@
+# ------------------------------------
+# 1. Python Bytecode (Archivos de Compilación)
+# ------------------------------------
+*.pyc
+__pycache__/
+
+# ------------------------------------
+# 2. Entornos Virtuales (CRUCIAL)
+# ------------------------------------
+# Ignora la carpeta donde se instalan las librerías
+# Esto evita subir cientos de megabytes de dependencias
+venv/
+.venv/
+env/
+
+# ------------------------------------
+# 3. Pytest y Cobertura
+# ------------------------------------
+# Archivos de caché y reportes de cobertura de Pytest
+.pytest_cache/
+htmlcov/
+.coverage
+
+# ------------------------------------
+# 4. macOS y Windows (Archivos del Sistema Operativo)
+# ------------------------------------
+.DS_Store # Archivos de metadatos de macOS
+Thumbs.db # Archivos de metadatos de Windows
+
+# ------------------------------------
+# 5. Entornos de Desarrollo (IDE)
+# ------------------------------------
+.idea/      # Configuración de PyCharm/IntelliJ
+.vscode/    # Configuración de VS Code (a menos que sean settings compartidas)
+
+# ------------------------------------
+# 6. Artefactos del CI/CD (Reportes)
+# ------------------------------------
+# Ignorar reportes de gran tamaño generados durante la ejecución
+/reports/*
+!/reports/.gitkeep  # (Opcional: Mantiene la carpeta "reports" vacía en el repositorio)
