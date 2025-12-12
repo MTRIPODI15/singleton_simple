@@ -23,7 +23,7 @@ jobs:
       run: pip install -r requirements.txt
 
     - name: 4. Ejecutar Tests de API (Pytest)
-      run: pytest tests/api/test_users.py
+      run: PYTHONPATH=. pytest tests/api/test_users.py
       
     - name: 5. Documentar el Éxito del Singleton (Opcional)
       # Este paso sólo es para demostrar el output en el log de la Action
